@@ -27,16 +27,15 @@ vector<int> preOrderTrav(struct node* root){
     s.push(root);
 
     while(!s.empty()){
-        struct node* topNode = s.top();
-        ans.push_back(topNode->data);
-        s.pop();
-        if(topNode->right!=NULL){
-            s.push(topNode->right);
-        }
-        if(topNode->left!=NULL){    // not else if since we have to look into both the left and right node and not either or.
-            s.push(topNode->left);
-        }
-
+      struct node* topNode = s.top();
+      ans.push_back(topNode->data);
+      s.pop();
+      if(topNode->right!=NULL){
+        s.push(topNode->right);
+      }
+      if(topNode->left!=NULL){
+        s.push(topNode->left);
+      }
     }
     return ans;
 
