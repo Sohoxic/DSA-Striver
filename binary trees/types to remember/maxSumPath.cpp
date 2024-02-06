@@ -7,13 +7,15 @@ struct node {
   struct node * left, * right;
 };
 
-int findMaxPathSum(node *root, int &maxi){
-    if(root==NULL)  return 0;
-    int leftMaxPath = max(0,findMaxPathSum(root->left, maxi));
-    int rightMaxPath = max(0,findMaxPathSum(root->left, maxi));
+int findMaxPathSum(node * root, int & maxi) {
+  if (root == NULL) return 0;
 
-    maxi = max(maxi, leftMaxPath+rightMaxPath+root->data);
-    return max(leftMaxPath,rightMaxPath)+root->data;
+  int leftMaxPath = max(0, findMaxPathSum(root -> left, maxi));
+  int rightMaxPath = max(0, findMaxPathSum(root -> right, maxi));
+  int val = root -> data;
+  maxi = max(maxi, (leftMaxPath + rightMaxPath) + val);
+  return max(leftMaxPath, rightMaxPath) + val;
+
 }
 
 int maxPathSum(node * root) {
