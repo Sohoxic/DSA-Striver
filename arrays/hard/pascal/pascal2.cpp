@@ -1,4 +1,4 @@
-
+// generate the row of the pascal triangle
 #include <bits/stdc++.h>
 using namespace std;
 
