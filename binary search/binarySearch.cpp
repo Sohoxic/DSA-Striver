@@ -14,7 +14,7 @@ using namespace std;
 //             high = mid - 1;
 //         }
 //         else{
-//             low = low+1;
+//             low = mid+1;
 //         }
 //     }
 //     return -1;
