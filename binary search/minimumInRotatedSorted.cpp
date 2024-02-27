@@ -12,6 +12,7 @@ int findMin(vector<int>& arr) {
             ans = min(ans, arr[low]);
             low = mid + 1;
         }
+        // right sorted
         else{
             ans = min(ans, arr[mid]);
         }
