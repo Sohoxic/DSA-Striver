@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,6 +14,7 @@ int findMin(vector<int>& arr) {
         // right sorted
         else{
             ans = min(ans, arr[mid]);
+            high = mid - 1;
         }
     }
     return ans;
