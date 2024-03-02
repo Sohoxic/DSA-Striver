@@ -6,6 +6,11 @@ int findMin(vector<int>& arr) {
     int ans = INT_MAX;
     while (low <= high) {
         int mid = (low + high) / 2;
+        // both side sorted, that is entire array is sorted
+        if(arr[low]<arr[high]){
+            ans = min(ans, arr[low]);
+            break;
+        }
         // left sorted
         if(arr[low]<=arr[mid]){
             ans = min(ans, arr[low]);
