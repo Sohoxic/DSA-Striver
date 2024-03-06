@@ -22,21 +22,21 @@ struct node *newNode(int data)
 
 int findCeil(node *root, int input)
 {
-    int ceil = -1;
+    int floor = -1;
     while(root){
         if(root->data == input){
             return input;
         }
-        else if(input<root->data){
-            ceil = root->data;
-            root = root->left;
+        else if(input > root->data){
+            floor = root->data;
+            root = root->right;
         }
         else{
-            root = root->right;
+            root = root->left;
         }
     }
 
-    return ceil;
+    return floor;
 }
 
 int main()
