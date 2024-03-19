@@ -17,9 +17,35 @@ class Solution {
         vector<int> adjls[V];
         for(int i=0; i<V; i++){
             for(int j=0; j<V; j++){
-                
+                if(adj[i][j]==1 && i!=j){
+                    adjls[i].push_back(j);
+                    adj[j].push_back(i);
+                }
             }
         }
+
+        // for(int i=0; i<V; i++){
+        //     cout<<i<<"-> ";
+        //     for(auto i: adjls[i]){
+        //         cout<<i<<" ";
+        //     }
+        //     cout<<endl;
+        // }
+
+        // return 0;
+
+        int vis[V] = {0}; 
+        int cnt = 0; 
+
+        for(int i = 0;i<V;i++) {
+            // if the node is not visited
+            if(!vis[i]) {
+                // counter to count the number of provinces 
+                cnt++;
+               dfs(i, adjls, vis); 
+            }
+        }
+        return cnt;
     }
 };
 
